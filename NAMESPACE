@@ -2,6 +2,7 @@
 
 export(AnoVaOMICS)
 export(IncrAUC)
+export(NA.rm)
 importFrom(graphics,boxplot)
 importFrom(graphics,par)
 importFrom(stats,aov)

@@ -7,6 +7,7 @@
 #' @param df dataframe (measure times in minutes in columns, samples in rows)
 #' @param graph if TRUE, plot a boxplot, Default: TRUE
 #' @param grp sample grouping column
+#' @param substr.init.conc if TRUE, substract iAUC with "initial Conc x total time"
 #' @return the function returns a dataframe with the AUC per sample and a boxplot (if graph=T)
 
 #'
@@ -18,7 +19,7 @@
 #' IncrAUC(OGTT, lineage)
 #' @export
 
-IncrAUC <- function(df, grp, graph=T){
+IncrAUC <- function(df, grp, graph=T, substr.init.conc=F){
 
   l<-which(colnames(df)==deparse(substitute(grp)))
   status<-as.factor(as.character(df[,l]))
@@ -42,6 +43,10 @@ IncrAUC <- function(df, grp, graph=T){
 
   sum_auc<-rowSums(Val_AUC)
 
+  if(substr.init.conc==T){
+    sum_auc<-sum_auc-(df2[1]*(temps_2[nb]-temps_2[1]))
+  }
+
   res<- data.frame(sample=rownames(df),status=status,
                    AUC=as.numeric(sum_auc))
 
@@ -51,6 +56,7 @@ IncrAUC <- function(df, grp, graph=T){
     boxplot(data=res, AUC/1000~status , col=colBox[1:nlevels(status)],
             xlab="", ylab="AUC (x 10³)")
   }
+
   return(res) # Renvoi des résultats vers un objet
 }
 # *****************************************************************

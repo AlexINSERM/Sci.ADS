@@ -5,9 +5,13 @@ Date: 2021-07-22
 Author: Alexandre Dos Santos
 Maintainer: Alexandre Dos Santos <alexandre.dos-santos@inserm.fr>
 Depends: R (>= 3.5.0)
-Description: Not much except to help analyze results
+Description: Not much except to help analyze results.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1.9001
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr

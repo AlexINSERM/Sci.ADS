@@ -4,7 +4,7 @@
 \alias{IncrAUC}
 \title{Incremental AUC}
 \usage{
-IncrAUC(df, grp, graph = T)
+IncrAUC(df, grp, graph = T, substr.init.conc = F)
 }
 \arguments{
 \item{df}{dataframe (measure times in minutes in columns, samples in rows)}
@@ -12,6 +12,8 @@ IncrAUC(df, grp, graph = T)
 \item{grp}{sample grouping column}
 
 \item{graph}{if TRUE, plot a boxplot, Default: TRUE}
+
+\item{substr.init.conc}{if TRUE, substract iAUC with "initial Conc x total time"}
 }
 \value{
 the function returns a dataframe with the AUC per sample and a boxplot (if graph=T)

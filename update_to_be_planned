@@ -1,0 +1,4 @@
+Ajouter argument a IncrAUC pour l'average conconcentration of glucose in the body.
+changer le man avec linear trapezoidal method (cf. https://www.certara.com/knowledge-base/calculating-auc-linear-and-log-linear/) et références
+Inclure les deux autres méthodes en arguments: log et linear-log
+Ajouter argument pour enlever le rectangle constitué de conc initiale x  temps total
