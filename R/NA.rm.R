@@ -1,7 +1,7 @@
 #' Delete samples or variables with predefined number of NA
 #'
 #' @param df dataframe
-#' @param n number of NA (if 0 --> all NAs)
+#' @param n maximum number of NA (if 0 --> all NAs)
 #' @param direction in which direction the deletion will take place ("rows" or "columns")
 #'
 #' @return dataframe after sorting and deleting NA
