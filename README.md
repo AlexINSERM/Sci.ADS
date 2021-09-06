@@ -25,4 +25,4 @@ Thank you for your feedback
 
 INSERM U1193, Paul Brousse Hospital, Villejuif, France
 
-[email](alexandre.dos-santos@inserm.fr)
+[email](mailto:alexandre.dos-santos@inserm.fr)
