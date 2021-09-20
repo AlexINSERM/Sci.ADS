@@ -44,7 +44,7 @@ IncrAUC <- function(df, grp, graph=T, substr.init.conc=F){
   sum_auc<-rowSums(Val_AUC)
 
   if(substr.init.conc==T){
-    sum_auc<-sum_auc-(df2[1]*(temps_2[nb]-temps_2[1]))
+    sum_auc<-sum_auc-(df2[,1]*(temps_2[nb]-temps_2[1]))
   }
 
   res<- data.frame(sample=rownames(df),status=status,
