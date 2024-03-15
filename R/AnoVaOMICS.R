@@ -43,7 +43,7 @@ AnoVaOMICS<-function(df, grp, threshold=5, method.Adj="BH"){
   output$adj_p_value<-p.adjust(output$p_value, n=nb, method = method.Adj) # Calcul de la p-value ajustée
   output2 <- subset(output, adj_p_value<threshold) # tri des résultats en fonction de la p-value souhaitée
   output2$p_value<-format(output2$p_value, digits=3, scientific=T) # Valeurs après la virgule et notation scientifique
-  output2$adj_p_value<-format(output2$adj_p_value, digits=4, scientific=T)
+  output2$adj_p_value<-format(output2$adj_p_value, digits=4, scientific=F)
 
   # Définition de la sortie écran des résultats
   print(output2)
