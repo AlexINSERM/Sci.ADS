@@ -44,9 +44,10 @@ wilcoxBatch <- function(df, groupVar, threshold = 5, method.Adj = "BH") {
   results <- results[results$Adjusted.P.Value < threshold, ]
 
   # Format the p-values
+  results$P.Value<-sapply(results$P.Value, function(x) as.numeric(as.character(x)))
+  results$Adjusted.P.Value<-sapply(results$Adjusted.P.Value, function(x) as.numeric(as.character(x)))
   results$P.Value <- format(results$P.Value, digits = 3, scientific = TRUE)
   results$Adjusted.P.Value <- format(results$Adjusted.P.Value, digits = 3, scientific = TRUE)
-
   # Sort the results by adjusted p-value
   results <- results[order(as.numeric(results$Adjusted.P.Value)), ]
 
